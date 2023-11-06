@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>beforeUpdate Hook Example</h1>
+    <h1>updated Hook Example</h1>
     <p>Message: {{ message }}</p>
     <button @click="updateMessage">Update Message</button>
   </div>
@@ -19,9 +19,9 @@ export default {
       this.message = 'Updated Message';
     },
   },
-  beforeUpdate() {
-    // This hook is called just before the component updates
-    console.log('Component is about to update');
+  updated() {
+    // This hook is called after the component has been updated and re-rendered
+    console.log('Component has been updated');
     console.log('Current message:', this.message);
   },
 };
