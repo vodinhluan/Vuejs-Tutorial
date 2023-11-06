@@ -1,29 +1,29 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <h1 v-bind:class="[activeClass, errorClass]">Hello Directives</h1>
+  <div>
+    <h1>Custom Directive Example</h1>
+    <div v-my-directive>
+      This div has a custom directive applied to it.
     </div>
   </div>
 </template>
 
 <script>
+// Define the custom directive
+const myDirective = {
+  beforeMount(el, binding, vnode, prevVnode) {
+    // This hook is called right before the element is inserted into the DOM
+    console.log('Directive beforeMount');
+    console.log('Element:', el);
+  },
+};
+
 export default {
-  data() {
-    return {
-      activeClass: 'active',
-      errorClass: 'put-line'
-    }
-  }
-}
+  name: 'App',
+  directives: {
+    'my-directive': myDirective,
+  },
+};
 </script>
 
-<style>
-  .active {
-    color: green;
-    text-align: center;
-  }
 
-  .put-line {
-    text-decoration: underline;
-  }
-</style>
+
