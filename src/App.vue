@@ -1,29 +1,28 @@
 <template>
   <div>
-    <h1>Custom Directive Example</h1>
-    <div v-my-directive>
-      This div has a custom directive applied to it.
-    </div>
+    <h1>beforeUpdate Hook Example</h1>
+    <p>Message: {{ message }}</p>
+    <button @click="updateMessage">Update Message</button>
   </div>
 </template>
 
 <script>
-// Define the custom directive
-const myDirective = {
-  beforeMount(el, binding, vnode, prevVnode) {
-    // This hook is called right before the element is inserted into the DOM
-    console.log('Directive beforeMount');
-    console.log('Element:', el);
-  },
-};
-
 export default {
   name: 'App',
-  directives: {
-    'my-directive': myDirective,
+  data() {
+    return {
+      message: 'Hello, Vue!',
+    };
+  },
+  methods: {
+    updateMessage() {
+      this.message = 'Updated Message';
+    },
+  },
+  beforeUpdate() {
+    // This hook is called just before the component updates
+    console.log('Component is about to update');
+    console.log('Current message:', this.message);
   },
 };
 </script>
-
-
-
