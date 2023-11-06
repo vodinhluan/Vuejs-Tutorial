@@ -1,28 +1,39 @@
 <template>
   <div>
-    <h1>updated Hook Example</h1>
-    <p>Message: {{ message }}</p>
-    <button @click="updateMessage">Update Message</button>
+    <h1>Lifecycle Hooks</h1>
+    <button @click="toggleComponent">{{ btnText }}</button>
+    <div v-if="activeComp">
+      <comp-one />
+    </div>
   </div>
 </template>
 
 <script>
+import CompOne from './components/CompOne.vue'; // Import the CompOne component
+
 export default {
-  name: 'App',
+  components: {
+    CompOne, // Register the CompOne component
+  },
   data() {
     return {
-      message: 'Hello, Vue!',
+      activeComp: true,
     };
   },
-  methods: {
-    updateMessage() {
-      this.message = 'Updated Message';
+  computed: {
+    btnText() {
+      return this.activeComp ? 'Remove component' : 'Add component';
     },
   },
-  updated() {
-    // This hook is called after the component has been updated and re-rendered
-    console.log('Component has been updated');
-    console.log('Current message:', this.message);
+  methods: {
+    toggleComponent() {
+      this.activeComp = !this.activeComp;
+    },
   },
 };
 </script>
+
+
+
+
+
