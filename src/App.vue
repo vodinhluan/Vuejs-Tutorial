@@ -1,23 +1,20 @@
 <template>
-  <p>Firt Name: {{ firstName }}</p>
-  <input type="text" v-model.lazy="firstName">
+  <p>Country: {{country}} </p>
+  <select v-model="country">
+    <option option="">Choose something</option>
+    <option option="VN">VIETNAM</option>
+    <option option="US">USA</option>
+    <option option="TL">THAILAND</option>
+    <option option="JP">JAPAN</option>
+  </select>
 
-  <p>Last Name: {{ lastName }}</p>
-  <input type="text" v-model="lastName">
 </template>
 
 <script>
 export default {
   data() {
     return {
-      firstName: '',
-      lastName:''
-    }
-  },
-  methods: {
-    getInput() {
-      this.firstName = event.target.value;
-      this.lastName = event.target.value;
+      country:''
     }
   }
 }
