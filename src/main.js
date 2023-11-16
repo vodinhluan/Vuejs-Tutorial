@@ -1,11 +1,21 @@
-import { createApp } from 'vue';
-import App from './App.vue';
-import CompOne from './components/CompOne.vue'
+// main.js
+import { createApp } from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
 
+import App from './App.vue'
+import FoodItems from './components/FoodItems.vue'
+import AnimalCollection from './components/AnimalCollection.vue'
 
-const app = createApp(App);
+const router = createRouter({
+    history: createWebHistory(),
+    routes: [
+        { path: '/', component: App },
+        { path: '/animals', component: AnimalCollection },
+        { path: '/food', component: FoodItems },
+    ]
+});
 
-app.component('comp-one', CompOne)
+const app = createApp(App)
+
+app.use(router);
 app.mount('#app')
-
-
