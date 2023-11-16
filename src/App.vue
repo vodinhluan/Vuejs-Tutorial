@@ -1,6 +1,6 @@
 <template>
   <p>Name: {{ name }}</p>
-  <input type="text" @input="getInput">
+  <input type="text" v-model="name">
 </template>
 
 <script>
