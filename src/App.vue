@@ -14,5 +14,7 @@ export default {
 
 
 <style>
-  
+  body {
+    background-color:lightslategrey;
+  }
 </style>
