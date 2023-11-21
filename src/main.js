@@ -1,7 +1,14 @@
-import { createApp } from "vue";
-import App from './App.vue';
-import router from "./router";
+import { createApp } from 'vue';
+import Header from './components/Header.vue';
+import MainContent from './components/MainContent.vue';
+import Footer from './components/Footer.vue';
 
-const app = createApp(App);
-app.use(router);
-app.mount("#app");
+const app = createApp({
+  components: {
+    Header,
+    MainContent,
+    Footer
+  }
+});
+
+app.mount('#app');
