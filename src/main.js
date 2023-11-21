@@ -1,11 +1,7 @@
-import { createApp } from 'vue'
-import HelloWorld from "./components/HelloWorld";
-import App from "./App.vue";
+import { createApp } from "vue";
+import App from './App.vue';
+import router from "./router/index.js";
 
 const app = createApp(App);
-
-app.component('HelloWorld', HelloWorld);
-app.mount('#app')
-
-
-
+app.use(router);
+app.mount("#app");

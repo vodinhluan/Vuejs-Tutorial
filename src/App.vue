@@ -1,19 +1,4 @@
 <template>
-  <hello-world></hello-world>
+  <h1>trang chu</h1>
+  <router-view></router-view>
 </template>
-
-<script>
-//import HelloWorld from './components/HelloWorld';
-
-export default {
-  
-}
-</script>
-
-<style>
-  body {
-    background-color:lightslategrey;
-  }
-</style>
-
-
