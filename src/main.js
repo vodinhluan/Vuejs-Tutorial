@@ -1,14 +1,17 @@
-import { createApp } from 'vue';
-import Header from './components/Header.vue';
-import MainContent from './components/MainContent.vue';
-import Footer from './components/Footer.vue';
+import { createApp, h } from 'vue'
 
 const app = createApp({
-  components: {
-    Header,
-    MainContent,
-    Footer
+  setup() {
+    return {
+      title: 'Trang Chủ',
+      content: 'Vo Dinh Luan'
+    }
+  },
+  render() {
+    return h('div', [
+      h('h1', this.title),
+      h('p', this.content)
+    ])
   }
-});
-
-app.mount('#app');
+})
+app.mount('#app')

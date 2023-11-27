@@ -1,33 +1,16 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <MainContent></MainContent>
-    <Footer></Footer>
+    <RootComponent />
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import MainContent from './components/MainContent.vue'
-import Footer from './components/Footer.vue'
+import { createApp, h } from 'vue'
+import RootComponent from './main.js'
 
 export default {
-  name: 'App',
   components: {
-    Header,
-    MainContent,
-    Footer
+    RootComponent
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
